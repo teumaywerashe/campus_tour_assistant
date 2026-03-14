@@ -13,7 +13,7 @@ export default function AdminFeedbackReview() {
   const deleteFeedback = async (id) => {
     try {
       const response = await axios.delete(
-        `http://localhost:3000/api/feedback/${id}`
+        `${import.meta.env.VITE_BACKEND_URL}/api/feedback/${id}`
       );
 
       if (response.data.success) {
@@ -29,7 +29,7 @@ export default function AdminFeedbackReview() {
 
   const getFeedbacks = async () => {
     try {
-      const response = await axios.get(`http://localhost:3000/api/feedback`);
+      const response = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/feedback`);
 
       if (response.data.success) {
         setFeedbacks(response.data.data);

@@ -47,7 +47,7 @@ export default function Admin() {
 
   const fetchBuildings = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/api/building");
+      const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/building`);
       if (res.data.success) setBuildings(res.data.buildings);
     } catch (err) {
       console.error(err);
@@ -121,7 +121,7 @@ export default function Admin() {
     if (imageFile) data.append("images", imageFile);
 
     try {
-      const url = "http://localhost:3000/api/building";
+      const url = `${import.meta.env.VITE_BACKEND_URL}/api/building`;
       if (editingBuilding) {
         await axios.put(`${url}/${editingBuilding.id}`, data);
       } else {
@@ -143,7 +143,7 @@ export default function Admin() {
   const handleDelete = async (id) => {
     if (!confirm("Are you sure you want to delete this building?")) return;
     try {
-      const response = await axios.delete(`http://localhost:3000/api/building/${id}`);
+      const response = await axios.delete(`${import.meta.env.VITE_BACKEND_URL}/api/building/${id}`);
 
       if(response.data.success){
         toast.success("Building deleted successfully");

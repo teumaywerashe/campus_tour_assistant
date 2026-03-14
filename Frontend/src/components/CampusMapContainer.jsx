@@ -112,7 +112,7 @@ export default function CampusMapContainer({
 
   const fetchBuildings = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/api/building");
+      const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/building`);
       if (res.data.success) setLocations(res.data.buildings);
     } catch (err) {
       console.error(err);
