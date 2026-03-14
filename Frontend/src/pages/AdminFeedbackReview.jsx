@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { CheckCircle, Eye, MessageSquare, Trash2 } from "lucide-react";
 import axios from "axios";
-import { storeContext } from "../context/storeContext";
+import { storeContext } from "../context/StoreContext";
 import toast from "react-hot-toast";
 import { useTheme } from "../context/ThemeContext"; // Added theme hook
 

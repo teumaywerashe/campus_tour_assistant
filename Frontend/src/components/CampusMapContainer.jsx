@@ -14,7 +14,7 @@ import path from "ngraph.path";
 import { CAMPUS_INFO } from "../data/locations";
 import { nodes, EDGES } from "../data/navigation";
 import BuildingDetailsPanel from "./BuildingDetailsPanel";
-import { storeContext } from "../context/storeContext";
+import { storeContext } from "../context/StoreContext";
 import axios from "axios";
 import toast from "react-hot-toast";
 

@@ -4,7 +4,7 @@ import {
   Dumbbell, UtensilsCrossed, Home, Stethoscope, Car, Trees 
 } from 'lucide-react';
 import { useContext, useEffect, useMemo } from 'react';
-import { storeContext } from '../context/storeContext';
+import { storeContext } from '../context/StoreContext';
 import { useTheme } from '../context/ThemeContext';
 
 const iconMap = {

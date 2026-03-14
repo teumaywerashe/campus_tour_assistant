@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { Star } from "lucide-react";
 import axios from "axios";
 import toast from "react-hot-toast";
-import { storeContext } from "../context/storeContext";
+import { storeContext } from "../context/StoreContext";
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTheme } from '../context/ThemeContext';
 

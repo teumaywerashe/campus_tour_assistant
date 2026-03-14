@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Menu, X, Lock, LogOut, Sun, Moon } from "lucide-react";
 import { useTheme } from "../context/ThemeContext";
-import { storeContext } from "../context/storeContext";
+import { storeContext } from "../context/StoreContext";
 
 export default function Navbar() {
   const { isAuthenticated, setIsAuthenticated } = useContext(storeContext);

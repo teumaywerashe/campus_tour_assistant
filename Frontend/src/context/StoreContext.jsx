@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 export const storeContext = createContext();
 
 export const ContextProvider = ({ children }) => {
-  const url = "http://localhost:3000";
+  const url =import.meta.env.BACKEND_URL || "http://localhost:3000";
   const navigate = useNavigate();
 
   const [locations, setLocations] = useState([]);

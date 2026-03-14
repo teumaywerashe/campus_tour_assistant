@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Search, MapPin, Building2, Globe, Info, ArrowRight } from "lucide-react";
 import { useTheme } from "../context/ThemeContext";
-import { storeContext } from "../context/storeContext";
+import { storeContext } from "../context/StoreContext";
 
 export default function Home() {
   const { darkMode } = useTheme();

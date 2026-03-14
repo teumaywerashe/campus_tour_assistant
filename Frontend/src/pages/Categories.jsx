@@ -11,7 +11,7 @@ import {
   LayoutGrid
 } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
-import { storeContext } from '../context/storeContext';
+import { storeContext } from '../context/StoreContext';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const categoryButtons = [

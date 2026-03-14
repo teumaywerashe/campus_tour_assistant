@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useContext, useState } from "react";
-import { storeContext } from "../context/storeContext";
+import { storeContext } from "../context/StoreContext";
 import { ChevronRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { useTheme } from "../context/ThemeContext"; // Imported theme hook

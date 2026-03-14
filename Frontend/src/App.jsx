@@ -13,7 +13,7 @@ import AdminLogin from "./pages/AdminLogin";
 import AdminFeedbackReview from "./pages/AdminFeedbackReview";
 import Feedback from "./pages/FeedBack";
 import { Toaster } from "react-hot-toast";
-import { storeContext } from "./context/storeContext";
+import { storeContext } from "./context/StoreContext";
 
 function App() {
   const { isAuthenticated, setIsAuthenticated } = useContext(storeContext);

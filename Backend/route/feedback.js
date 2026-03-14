@@ -4,7 +4,7 @@ const {
     getAllFeedback,
     getFeedbackById,
     deleteFeedback,
-} = require("../models/feedback.js");
+} = require("../models/Feedback.js");
 
 const feedbackRouter = express.Router();
 

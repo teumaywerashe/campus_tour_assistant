@@ -4,7 +4,7 @@ import { Search as SearchIcon, X, MapPin } from "lucide-react";
 // import { locations } from "../data/locations";
 import CampusMapContainer from "../components/CampusMapContainer";
 import { useTheme } from "../context/ThemeContext";
-import { storeContext } from "../context/storeContext";
+import { storeContext } from "../context/StoreContext";
 
 
 export default function Search({
