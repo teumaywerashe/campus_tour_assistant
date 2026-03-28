@@ -93,19 +93,9 @@ export default function CampusMapContainer({
   isDarkMode,
 }) {
   const { setSelectedBuildingId } = useContext(storeContext);
-  //   const { getBuildings, locations } = useContext(storeContext);
-
-  //   useEffect(() => {
-  //     const fetchBuildings = async () => {
-  //       await getBuildings();
-  //     };
-  //     fetchBuildings();
-  //   }, []);
-
-  //   useEffect(() => {
-  //     console.log(locations);
-  //   }, []);
+ 
   const [selectedBuilding, setSelectedBuilding] = useState(null);
+  
   const navigate = useNavigate();
 
   const [locations, setLocations] = useState([]);
