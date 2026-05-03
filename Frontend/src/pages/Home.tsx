@@ -121,7 +121,7 @@ export default function Home() {
     <div className={`min-h-screen ${theme.bg} ${theme.text}`}>
 
       {/* ── HERO ─────────────────────────────────────────────────────────── */}
-      <section ref={heroRef} className="relative h-screen min-h-[600px] max-h-[900px] overflow-hidden flex items-center justify-center">
+      <section ref={heroRef} className="relative  h-screen min-h-[600px] max-h-[900px] overflow-hidden flex items-center justify-center">
 
         {/* Parallax background */}
         <motion.div
@@ -412,7 +412,7 @@ export default function Home() {
                     <div className="relative aspect-4/3 rounded-2xl overflow-hidden mb-3 shadow-md">
                       {loc?.images ? (
                         <img
-                          src={`${url}/uploads/buildings/${loc.images}`}
+                          src={loc.images as string}
                           alt={loc.name}
                           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                         />

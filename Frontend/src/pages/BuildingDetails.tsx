@@ -62,7 +62,7 @@ export default function BuildingDetails() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           <div className="lg:col-span-8">
             <div className="relative group rounded-2xl overflow-hidden shadow-2xl border border-transparent dark:border-slate-800">
-              <img src={`${url}/uploads/buildings/${location.images}`} alt={location.name} className="w-full h-[300px] sm:h-[450px] lg:h-[600px] object-cover transition-transform duration-500 group-hover:scale-105" />
+              <img src={location.images as string} alt={location.name} className="w-full h-[300px] sm:h-[450px] lg:h-[600px] object-cover transition-transform duration-500 group-hover:scale-105" />
               <div className="absolute top-4 left-4">
                 <span className={`px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest shadow-lg ${theme.tagBg}`}>{location.category}</span>
               </div>

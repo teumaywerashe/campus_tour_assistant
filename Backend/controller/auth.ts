@@ -6,8 +6,11 @@ import { getAdminByEmail, verifyPassword, createAdmin } from '../models/Admin';
 export const loginAdmin = async (req: Request, res: Response): Promise<void> => {
   try {
     const { email, password } = req.body;
+    console.log(email,password)
     const admin = await getAdminByEmail(email);
+    console.log(admin)
     if (!admin) {
+      console.log("first")
       res.status(404).json({ success: false, message: 'Admin not found' });
       return;
     }
@@ -30,7 +33,7 @@ export const loginAdmin = async (req: Request, res: Response): Promise<void> => 
       admin: { admin_id: admin.admin_id, username: admin.username, email: admin.email },
     });
   } catch (err) {
-    console.error(err);
+    console.error('Login error:', err);
     res.status(500).json({ success: false, message: 'Server error' });
   }
 };

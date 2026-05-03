@@ -1,25 +1,23 @@
+import { v2 as cloudinary } from 'cloudinary';
+import { CloudinaryStorage } from 'multer-storage-cloudinary';
 import multer from 'multer';
-import path from 'path';
-import { Request } from 'express';
 
-const storage = multer.diskStorage({
-  destination: (req: Request, file: Express.Multer.File, cb) => {
-    cb(null, 'uploads/buildings');
-  },
-  filename: (req: Request, file: Express.Multer.File, cb) => {
-    cb(null, Date.now() + path.extname(file.originalname));
-  },
+cloudinary.config({
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
-const upload = multer({
-  storage,
-  fileFilter: (req: Request, file: Express.Multer.File, cb) => {
-    if (file.mimetype.startsWith('image/')) {
-      cb(null, true);
-    } else {
-      cb(new Error('Only images are allowed'));
-    }
-  },
+const storage = new CloudinaryStorage({
+  cloudinary,
+  params: {
+    folder: 'campus-buildings',
+    allowed_formats: ['jpg', 'jpeg', 'png', 'webp'],
+    transformation: [{ quality: 'auto', fetch_format: 'auto' }],
+  } as object,
 });
 
+const upload = multer({ storage });
+
+export { cloudinary };
 export default upload;

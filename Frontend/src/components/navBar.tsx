@@ -47,14 +47,15 @@ export default function Navbar() {
             Addis Ababa University
           </span>
         </Link>
-
-        <div className="hidden md:flex items-center space-x-6">
-          {(isAuthenticated ? adminLinks : publicLinks).map((link) => (
+ <div className="hidden md:flex items-center space-x-6">
+  {(isAuthenticated ? adminLinks : publicLinks).map((link) => (
             <Link key={link.path} to={link.path} className={linkClass(link.path)}>
               {link.name}
             </Link>
           ))}
-
+</div>
+        <div className="hidden md:flex items-center space-x-6">
+        
           <button onClick={toggleDarkMode} className={`${darkMode ? 'text-white hover:text-[#646cff]' : 'text-slate-900 hover:text-[#646cff]'} focus:outline-none`} aria-label="Toggle theme">
             {darkMode ? <Sun size={20} /> : <Moon size={20} />}
           </button>

@@ -25,7 +25,11 @@ export const getAdminByEmail = async (email: string) => {
     .eq('email', email)
     .single();
 
-  if (error) return null;
+  // PGRST116 = no rows found — that's a valid "not found", not a real error
+  if (error) {
+    if (error.code === 'PGRST116') return null;
+    throw error; // surface real errors (RLS, wrong table, network, etc.)
+  }
   return data;
 };
 

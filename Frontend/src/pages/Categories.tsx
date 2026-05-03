@@ -16,7 +16,6 @@ const categoryButtons = [
 
 export default function Categories() {
   const { getBuildings, locations } = useContext(storeContext)!;
-  const url = 'http://localhost:3000';
   const { darkMode } = useTheme();
   const [activeTab, setActiveTab] = useState('All');
 
@@ -58,7 +57,7 @@ export default function Categories() {
               <motion.div layout initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, scale: 0.9 }} key={location.id} className="w-full">
                 <Link to={`/search?q=${location.name}`} className="group block">
                   <div className="relative aspect-[16/10] w-full overflow-hidden rounded-2xl bg-slate-200">
-                    <img src={`${url}/uploads/buildings/${location.images}`} alt={location.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                    <img src={location.images as string} alt={location.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                     <div className="absolute top-3 right-3 p-2 rounded-full bg-black/30 backdrop-blur-sm text-white"><ArrowUpRight size={16} /></div>
                   </div>
                   <div className="mt-4 px-1">
