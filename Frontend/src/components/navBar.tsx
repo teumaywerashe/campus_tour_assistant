@@ -42,7 +42,7 @@ export default function Navbar() {
     <nav className={`sticky top-0 z-50 shadow-xl ${darkMode ? 'bg-slate-900 text-white border-b border-white/5' : 'bg-white text-slate-900 border-b border-slate-200'}`}>
       <div className="max-w-7xl mx-auto px-4 h-16 flex justify-between items-center">
         <Link to="/" className="flex items-center space-x-2 font-bold group">
-          <img src="/src/images/logo.png" alt="AAU Logo" className="h-9 w-9 rounded-full" />
+          <img src="/logo.png" alt="AAU Logo" className="h-9 w-9 rounded-full" />
           <span className={`tracking-tight uppercase text-sm md:text-base px-3 py-2.5 transition-colors duration-300 ${darkMode ? 'text-white group-hover:text-[#646cff]' : 'text-slate-900 group-hover:text-[#646cff]'}`}>
             Addis Ababa University
           </span>

@@ -6,7 +6,7 @@ import { getAdminByEmail, verifyPassword, createAdmin } from '../models/Admin';
 export const loginAdmin = async (req: Request, res: Response): Promise<void> => {
   try {
     const { email, password } = req.body;
-    console.log(email,password)
+  
     const admin = await getAdminByEmail(email);
     console.log(admin)
     if (!admin) {
@@ -67,3 +67,7 @@ export const registerAdmin = async (req: Request, res: Response): Promise<void> 
     res.status(500).json({ success: false, message: 'Server error', error: err.message });
   }
 };
+
+
+
+
