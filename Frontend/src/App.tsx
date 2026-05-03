@@ -7,6 +7,7 @@ import Categories from './pages/Categories';
 import About from './pages/About';
 import BuildingDetails from './pages/BuildingDetails';
 import Admin from './pages/Admin';
+import BuildingForm from './pages/BuildingForm';
 import AdminLogin from './pages/AdminLogin';
 import AdminFeedbackReview from './pages/AdminFeedbackReview';
 import Feedback from './pages/FeedBack';
@@ -56,6 +57,14 @@ function App() {
         <Route
           path="/admin"
           element={isAuthenticated ? <Admin /> : <Navigate to="/login" replace />}
+        />
+        <Route
+          path="/admin/building/new"
+          element={isAuthenticated ? <BuildingForm /> : <Navigate to="/login" replace />}
+        />
+        <Route
+          path="/admin/building/edit/:id"
+          element={isAuthenticated ? <BuildingForm /> : <Navigate to="/login" replace />}
         />
         <Route
           path="/admin/feedback"
