@@ -233,8 +233,9 @@ export default function BuildingForm() {
                 <MapContainer center={[9.0409, 38.7621]} zoom={17} style={{ height: '100%', width: '100%' }}>
                   <ChangeView center={[Number(formData.lat) || 9.0409, Number(formData.lng) || 38.7621]} />
                   <TileLayer url={darkMode
-                    ? 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png'
-                    : 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'} />
+                    ? 'https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png'
+                    : 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'}
+                    attribution={darkMode ? '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a> &copy; OpenStreetMap contributors' : '&copy; OpenStreetMap contributors'} />
                   {formData.lat && formData.lng && (
                     <Marker position={[Number(formData.lat), Number(formData.lng)]} />
                   )}

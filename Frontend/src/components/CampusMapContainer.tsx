@@ -229,8 +229,8 @@ export default function CampusMapContainer({ searchQuery, selectedCategory, onBu
         <LeafletMap center={[userLoc.lat, userLoc.lng]} zoom={18} minZoom={16} maxZoom={21} zoomControl={false} style={{ height: '100%', width: '100%' }}>
           <MapHandler bounds={CAMPUS_INFO?.bounds} mapRef={mapRef} onMapClick={() => {}} />
           <TileLayer
-            url={isDarkMode ? 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png' : 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'}
-            attribution="&copy; OpenStreetMap contributors &copy; CARTO"
+            url={isDarkMode ? 'https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png' : 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'}
+            attribution={isDarkMode ? '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a> &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>' : '&copy; OpenStreetMap contributors'}
             maxZoom={21}
           />
           <Marker position={[userLoc.lat, userLoc.lng]} icon={L.divIcon({
